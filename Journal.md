@@ -53,3 +53,12 @@
            Dann *Commit* -Haken klicken
         4. Pull und Push auslösen, indem auf das Rädchen bzw. die Wolke ganz unten geklickt wird
 >>>>>>> 2ab178b3f66405962d375ccdc551c5015eb75627
+
+
+## 26.11.2021
+
+## 30.11.2021
+* Am Anfang der Stunde wird der eigene Webserver im Terminal gestartet. Der Befehl wird mit der Pfeiltaste "Nach oben" angezeigt und ausgeführt
+* Im Browser wird Inhalt über die Adresse ```localhost:3000``` aufgerufen
+* Der ```localhost``` ist der eigene Rechner
+* Mit dem Befehl ```ipconfig``` wird die eigene IP-Adresse angezeigt. Die Eigene IP-Adresse ist im Netzwerk eindeutig 
