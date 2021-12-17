@@ -62,3 +62,7 @@
 * Im Browser wird Inhalt über die Adresse ```localhost:3000``` aufgerufen
 * Der ```localhost``` ist der eigene Rechner
 * Mit dem Befehl ```ipconfig``` wird die eigene IP-Adresse angezeigt. Die Eigene IP-Adresse ist im Netzwerk eindeutig 
+
+## 14.01.2022  - K2
+* HTML
+* CSS
