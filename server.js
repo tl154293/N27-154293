@@ -1,14 +1,15 @@
 // Programme verarbeiten oft Objekte der realen Welt.
 // Objekte haben Eigenschaften.
-// In unserem Bankingprogramm interessieren uns Objekte, 
-// wie z.B. Kunde, Konto, Filiale, Bankautomat...
+// In unserem Bankingprogramm interessieren uns Objekte,
+// wie z.B. Kunde, Konto, Filiale, Bankautomat, ...
 // Alle Kunden unserer Bank haben dieselben Eigenschaften, aber
-// unterschiedliche Eigenschaftswerte 
+// unterschiedliche Eigenschaftswerte
+
 class Kunde{
     constructor(){
         this.IdKunde
-        this.Vorname
         this.Nachname
+        this.Vorname
         this.Kennwort
         this.Kontostand
         this.Geburtsdatum
@@ -16,20 +17,22 @@ class Kunde{
     }
 }
 
-// Von der Kunden-Klasse wird ene konkrete Instanz
-// gebildet
+// Von der Kunden-Klasse wird eine konkrte Instanz
+// gebildet. 
 
 let kunde = new Kunde()
 
-// Die Konkrete Instanz bekommt Eigenschaftswerte
+// Die konkrete Instanz bekommt Eigenschaftswerte
 // zugewiesen
 
-kunde.IdKunde = "154293"
-kunde.Vorne = "John"
-kunde.Nachname = "Trever" 
-kunde.Geburtsdatum = "22.02.2005"
-kunde.Mail = "Treverinho@gmx.de"
-kunde.Kennwort = "48734"
+kunde.IdKunde = 150000
+kunde.Nachname = "Müller"
+kunde.Vorname = "Pit"
+kunde.Geburtsdatum = "23.10.2000"
+kunde.Mail = "mueller@web.de"
+kunde.Kennwort = "123"
+
+
 const express = require('express')
 const bodyParser = require('body-parser')
 const meineApp = express()
@@ -50,16 +53,16 @@ meineApp.post('/login',(browserAnfrage, serverAntwort, next) => {
     const idKunde = browserAnfrage.body.IdKunde
     const kennwort = browserAnfrage.body.Kennwort
     
-console.log("ID des Kunden: " + kennwort)
-console.log("Kennwort des Kunden: " + kennwort)
+    console.log("ID des Kunden: " + idKunde)
+    console.log("Kennwort des Kunden: " + kennwort)
 
-if(idKunde == kunde.idKunde){
-    serverAntwort.render()
-
-}
-
-    serverAntwort.render('index.ejs', {})          
+    if(idKunde == kunde.IdKunde){
+        serverAntwort.render('index.ejs', {})
+    }else{
+        serverAntwort.render('login.ejs', {})
+    }
 })
+
 
 // Wenn die login-Seite im Browser aufgerufen wird, ...
 
@@ -77,3 +80,6 @@ meineApp.get('/login',(browserAnfrage, serverAntwort, next) => {
 meineApp.post('/login',(browserAnfrage, serverAntwort, next) => {              
     serverAntwort.render('index.ejs', {})          
 })
+
+// require('./Uebungen/ifUndElse.js')
+require('./Uebungen/klasseUndObjekt.js')
