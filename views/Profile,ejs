@@ -7,12 +7,12 @@
     <link rel="icon" type="image/vnd.microsoft.icon" href="favicon.ico">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>N27</title>
+    <title>N27 - Mein Profil</title>
 </head>
 <body>
     <div class="rahmen">
         <div class="kopf">
-            <h1>Willkommen bei der N27</h1>            
+            <h1>N27 - Mein Profil</h1>
         </div>
         <div class="navigationsleiste">            
             <a href="/">
@@ -26,7 +26,15 @@
             </a>   --
             <a href="/login"><i class="fa fa-sign-out fa-2x"></i></a>
         </div>
-        <div class="inhaltsbereich"></div>
+        <div class="inhaltsbereich">
+            <form method="post">
+                <label for="fname">Vorname:</label><br>
+                <input type="text" name="Vorname" readonly value= <%= Vorname %>><br>
+                <label for="lname">Nachname:</label><br>
+                <input type="password" name="Kennwort"><br><br>        
+                <button class="login" formaction="/login">Einloggen</button>
+            </form>
+        </div>
         <div class="fusszeile">
             &copy; 2022 GW21A
         </div>

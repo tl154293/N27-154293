@@ -130,7 +130,24 @@ meineApp.get('/login',(browserAnfrage, serverAntwort, next) => {
 
 
 meineApp.get('/about',(browserAnfrage, serverAntwort, next) => {              
-    serverAntwort.render('about.ejs', {})          
+
+    serverAntwort.render('about.ejs', {
+    })          
+})
+
+meineApp.get('/profile',(browserAnfrage, serverAntwort, next) => {              
+
+    serverAntwort.render('profile.ejs', {
+    })          
+})
+
+
+meineApp.get('/profile',(browserAnfrage, serverAntwort, next) => {              
+
+    serverAntwort.render('profile.ejs', {
+    Vorname: kunde.Vorname
+    Nachname: kunde.Nachname
+   })          
 })
 
 // require('./Uebungen/ifUndElse.js')
