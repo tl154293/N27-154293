@@ -1,19 +1,19 @@
 .rahmen {
   max-width: 400px;
-  border: 4px solid rgb(119, 107, 107); 
+  border: 4px solid lightblue; 
   border-radius: 5px;      
   margin: 0 auto
 }
 
 .kopf{
   padding: 5px;
-  background: #4CAF50;
+  background: bisque;
 }
 
 .navigationsleiste {  
   font-family: Arial, Helvetica, sans-serif;    
-  background-color: rgb(119, 107, 107);    
-  color: rgb(119, 107, 107);
+  background-color: bisque;    
+  color: bisque;
   font-size: 2vh;    
   text-align:center;  
   margin-bottom: 20px;
@@ -25,11 +25,11 @@
 
 .fusszeile{
   padding: 2px;
-  background: #4CAF50;
+  background: bisque;
   text-align: right;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.5em;  
-  color:white;
+  color:lightblue;
 }
 
 input {  
@@ -49,8 +49,8 @@ input {
   margin-bottom: 10px;
   margin-right: 10%;
   margin-left: 10%;  
-  background-color:darkgray;
-  color: white;
+  background-color:bisque;
+  color: lightblue;
   padding: 14px 20px;
   border-radius: 4px;
   cursor: pointer;
@@ -64,7 +64,7 @@ label {
   margin-left: 10%;        
   font-family: Arial, Helvetica, sans-serif;
   font-size: 2.5vh;  
-  color:black;
+  color:lightblue;
 }
 
 .meldung {
@@ -76,6 +76,7 @@ label {
   font-size: 2vh;  
   color: red;
 }
+
 .erfolgsmeldung {
   width: 80%;
   margin-bottom: 10px;
@@ -96,22 +97,22 @@ label {
   
 h1 {  
   text-align: center;
-  color: white;
+  color: lightblue;
   font-size: 3vh; 
   font-family: Arial, Helvetica, sans-serif;
 }
   
 h2 {  
-  color: #4CAF50;  
+  color: lightblue;  
   font-size: 2vh; 
   font-family: Arial, Helvetica, sans-serif;
   text-align:center;
 }
   
 a {  
-  color: white;  
+  color: lightblue;  
   text-decoration: none;
-  }
+}
   
 p {
   color: red;
@@ -119,3 +120,14 @@ p {
   font-size: 1.5vh; 
 }
 
+.schaltflaeche {
+  color: lightblue;
+  text-decoration: none;
+}
+
+.Rahmen {
+  max-width: 400px;
+  border: 4px solid lightblue; 
+  border-radius: 5px;      
+  margin: 0 auto
+}
