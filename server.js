@@ -25,7 +25,7 @@ let kunde = new Kunde()
 
 kunde.IdKunde = 152222
 kunde.Nachname = "Abdel "
-kunde.Vorname = "ASS"
+kunde.Vorname = "S"
 kunde.Geburtsdatum = "22.02.2005"
 kunde.Mail = "AbdelS@gmx.de"
 kunde.Kennwort = "222"
@@ -57,10 +57,17 @@ kundenberater.Rufnummer = "+49123/4567890"
 kundenberater.Begruessung = "Hallo, ich bin dein Privater Kundenberater!"
 kundenberater.Position = "Manager"
 
+// Die Klasse Konto ist der bAuplan für alle Konto-Objekte
+// In der Klasse werden alle relevanten Eigenschaften definiert 
+// Die konto Objekte, die aus dieser Klasse erzeugt werden, haben die selben
+// Eigenschaften, aber unterschiedliche Eigenschaftswerden
 
 class Konto{
 
     constructor(){
+
+        // Die relevanten Eigenschaften werden in Constructor aufgelistet
+        // Eigenschaften werden immer großgeschieben
 
         this.Kontostand
         this.IBAN
@@ -70,15 +77,42 @@ class Konto{
 }
 
 // Instanzierung eines Objektes namens konto vom TYp Konto
+// "let konto" bedeutet, dass ein Objekt namens konto exestieren soll. Man sagt,
+// das konto wird deklariert
 
+// "=new konto()" nennt man die instanzierung wird Festplattenspeicher 
+// reserviert, um bei der anschließenden Initialisierung konkrete Eigenschafts
+// werte dür das Objekt zu speicher 
 let konto = new Konto() 
 
-// Initialisierung 
+// Bei der Initialisierung werden konkrete Eigenschaftswerte in die reservierten Speicher-
+// zellen geschrieben
 
 konto.Kontostand = 1200
 konto.IBAN = "DE12345634563456345634"
 konto.Kontoart = "Giro"
 konto.PIN ="487"
+
+class Kredit{
+    constructor(){
+        this.Kreditzinssatz
+        this.Kreditlaufzeit
+        this.Betrag
+
+    }
+
+// Eine Funktion berechnet etwas. Im NAmen der Funktion steht also immer ein Verb
+
+    berechneGesamtkostenKreditnacheinemJAhr(){
+        return this.Betrag * this.Kreditlaufzeit / 100 + this.Betrag
+    }
+}
+
+let kredit = new Kredit()
+
+kredit.Betrag = 100
+kredit.Kreditlaufzeit = 2
+kredit.Kreditzinssatz = 10
 
 const express = require('express')
 const bodyParser = require('body-parser')
@@ -294,33 +328,53 @@ meineApp.post('/profile',(browserAnfrage, serverAntwort, next) => {
         Kennwort: kunde.Kennwort,
         Erfolgsmeldung: erfolgsmeldung
     })
-
-    meineApp.get('/kontostandAnzeigen',(browserAnfrage, serverAntwort, next) => {              
-    
-        // Wenn ein signierter Cookie mit Namen 'istAngemeldetAls' im Browser vorhanden ist,
-        // dann ist die Prüfung wahr und die Anweisungen im Rumpf der if-Kontrollstruktur 
-        // werden abgearbeitet.
-    
-        if(browserAnfrage.signedCookies['istAngemeldetAls']){
-            
-            // Die Index-Seite wird an den Browser gegeben:
-    
-            serverAntwort.render('kontostandAnzeigen.ejs',{})
-        }else{
-    
-            // Wenn der Kunde noch nicht eigeloggt ist, soll
-            // die Loginseite an den Browser zurückgegeben werden.
-            serverAntwort.render('login.ejs', {
-                Meldung: ""
-            })
-        }                 
-    })
-
 })
 
+// Sobald der Button "Kontostand anzeigen" auf der index-Seite gedrückt wird,
+    // wird die meineApp.get('/kontostandAnzeigen'-Funktion abgearbeitet.
+meineApp.get('/kontostandAnzeigen',(browserAnfrage, serverAntwort, next) => {              
+    
+    // Wenn ein signierter Cookie mit Namen 'istAngemeldetAls' im Browser vorhanden ist,
+    // dann ist die Prüfung wahr und die Anweisungen im Rumpf der if-Kontrollstruktur 
+    // werden abgearbeitet.
 
+    if(browserAnfrage.signedCookies['istAngemeldetAls']){
+        
+        // Die Index-Seite wird an den Browser gegeben:
+
+        serverAntwort.render('kontostandAnzeigen.ejs',{})
+    }else{
+
+        // Wenn der Kunde noch nicht eigeloggt ist, soll
+        // die Loginseite an den Browser zurückgegeben werden.
+        serverAntwort.render('login.ejs', {
+            Meldung: ""
+        })
+    }                 
+})
+
+meineApp.get('/kreditRechner',(browserAnfrage, serverAntwort, next) => {              
+
+    // Wenn ein signierter Cookie mit Namen 'istAngemeldetAls' im Browser vorhanden ist,
+    // dann ist die Prüfung wahr und die Anweisungen im Rumpf der if-Kontrollstruktur 
+    // werden abgearbeitet.
+
+    if(browserAnfrage.signedCookies['istAngemeldetAls']){
+        
+        // Die Index-Seite wird an den Browser gegeben:
+
+        serverAntwort.render('kreditRechner.ejs',{})
+    }else{
+
+        // Wenn der Kunde noch nicht eigeloggt ist, soll
+        // die Loginseite an den Browser zurückgegeben werden.
+        serverAntwort.render('login.ejs', {
+            Meldung: ""
+        })
+    }                 
+})
 
 
 //require('./Uebungen/ifUndElse.js')
 //require('./Uebungen/klasseUndObjekt.js')
-require('./Uebungen/Klausur.js')
+//require('./Uebungen/Klausur.js')
