@@ -34,16 +34,13 @@
         <div class="inhaltsbereich">
             <form method="post">
                 <label>Kontoart:</label><br>
-                <input type="text" name="Kontoart" readonly value=<%= Kontoart %>  <br>
+                <input type="text" name="Kontoart" readonly value=<%= Kontoart %>  ><br>
                 <label>IBAN:</label><br>
-                <input type="text" name="IBAN" readonly value=<%= IBAN %> <br>        
+                <input type="text" name="IBAN" value=<%= IBAN %> readonly><br>        
                 <label>Kontostand:</label><br>
                 <input type="number" name="Kontostand" readonly value=<%= Kontostand %>  ><br>
-                
-                <button class="login" formaction="/profile">Änderung speichern</button>
             </form>   
             <p class="erfolgsmeldung"><%= Erfolgsmeldung %></p>
-        </div>
         </div>
         <div class="fusszeile">
             &copy; 2022 GW21A
