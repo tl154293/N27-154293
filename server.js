@@ -39,10 +39,10 @@ let kunde = new Kunde()
 // Die konkrete Instanz bekommt Eigenschaftswerte zugewiesen.
 
 kunde.IdKunde = 155555
-kunde.Nachname = "Buschmann"
-kunde.Vorname = "Hans"
+kunde.Nachname = "Frosch"
+kunde.Vorname = "Walter"
 kunde.Geburtsdatum = "22.02.2000"
-kunde.Mail = "h.bschmann@gmx.de"
+kunde.Mail = "w.froschgmx.de"
 kunde.Kennwort = "222"
 kunde.Rufnummer = "+49123/4567890"
 
@@ -65,9 +65,9 @@ let kundenberater = new Kundenberater()
 // Die konkrete Instanz bekommt Eigenschaftswerte zugewiesen.
 
 kundenberater.IdKundenberater = 1
-kundenberater.Nachname = "Frosch"
-kundenberater.Vorname = "Walter"
-kundenberater.Mail = "w.frosch@n27.com"
+kundenberater.Nachname = "Buschmann"
+kundenberater.Vorname = "Buschi"
+kundenberater.Mail = "b.buschmann@n27.com"
 kundenberater.Rufnummer = "+49123/4567890"
 kundenberater.Begruessung = "Hallo, ich bin, Dein Kundenberater!"
 kundenberater.Position = "Ceo"
@@ -106,7 +106,7 @@ let konto = new Konto()
 // Die Zuweisung von Eigenschaftswerten geschieht immer von rechts nach links.
 
 konto.IBAN = "DE1234567890123456"
-konto.Kontostand = 150000
+konto.Kontostand = 1000000
 konto.Kontoart = "Giro"
 
 const express = require('express')
