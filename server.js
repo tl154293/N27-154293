@@ -374,20 +374,3 @@ meineApp.get('/kontostandAnzeigen',(browserAnfrage, serverAntwort, next) => {
 //require('./Uebungen/ifUndElse.js')
 //require('./Uebungen/klasseUndObjekt.js')
 //require('./Klausuren/20221026_klausur.js')
-
-
-meineApp.get('/Test',(browserAnfrage, serverAntwort, next) => {              
-
-
-
-    if(browserAnfrage.signedCookies['istAngemeldetAls']){
-
-        serverAntwort.render('Test.ejs', {
-
-        })
-    }else{
-        serverAntwort.render('login.ejs',{
-            Meldung: ""
-        })
-    }          
-})
